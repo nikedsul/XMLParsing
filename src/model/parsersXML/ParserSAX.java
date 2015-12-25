@@ -11,14 +11,11 @@ import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * Created by Nikolai on 23.12.2015.
  */
-public class ParserSAX implements IParsersUniting {
-    private List<Gun> guns = new ArrayList<>();
+public class ParserSAX extends ParsersUniting {
 
     public ParserSAX(String xml) {
         if (new XMLAgainstXSD(xml).validate()) {
@@ -33,11 +30,6 @@ public class ParserSAX implements IParsersUniting {
         } else {
             System.out.println("Incorrect XML-file!");
         }
-    }
-
-    @Override
-    public List<Gun> getGuns() {
-        return guns;
     }
 
     private class Handler extends DefaultHandler {

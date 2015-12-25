@@ -11,14 +11,12 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by Nikolai on 22.12.2015.
  */
-public class ParserDOM implements IParsersUniting {
-    private List<Gun> guns = new ArrayList<Gun>();
+public class ParserDOM extends ParsersUniting {
 
     public ParserDOM(String xml) throws IOException, SAXException, ParserConfigurationException {
         if (new XMLAgainstXSD(xml).validate()) {
@@ -26,11 +24,6 @@ public class ParserDOM implements IParsersUniting {
         } else {
             System.out.println("Incorrect XML-file!");
         }
-    }
-
-    @Override
-    public List<Gun> getGuns() {
-        return guns;
     }
 
     private void createObject(String xml) throws ParserConfigurationException, IOException, SAXException {

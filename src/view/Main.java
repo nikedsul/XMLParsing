@@ -21,7 +21,8 @@ public class Main {
         IParsersUniting domParser = new ParserDOM("Guns.xml");
         IParsersUniting saxParser = new ParserSAX("Guns.xml");
         IParsersUniting parser = new ParserStAX("Guns.xml");
-        for (Gun gun : parser.getGuns()) {
+        domParser.sortByField("Manufacturer country");
+        for (Gun gun : domParser.getGuns()) {
             System.out.println(gun.toString());
         }
     }

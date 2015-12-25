@@ -5,9 +5,7 @@ import model.*;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 import javax.xml.stream.XMLEventReader;
 import javax.xml.stream.XMLInputFactory;
@@ -22,8 +20,7 @@ import javax.xml.stream.events.XMLEvent;
 /**
  * Created by Nikolai on 24.12.2015.
  */
-public class ParserStAX implements IParsersUniting {
-    private List<Gun> guns = new ArrayList<>();
+public class ParserStAX extends ParsersUniting {
 
     public ParserStAX(String xml){
         if (new XMLAgainstXSD(xml).validate()) {
@@ -31,11 +28,6 @@ public class ParserStAX implements IParsersUniting {
         } else {
             System.out.println("Incorrect XML-file!");
         }
-    }
-
-    @Override
-    public List<Gun> getGuns() {
-        return guns;
     }
 
     private void createObject(String xml) {
