@@ -1,5 +1,9 @@
 package model;
 
+import model.enums.EMaterial;
+import model.enums.EModel;
+import model.enums.EOrigin;
+
 /**
  * Created by Nikolai on 22.12.2015.
  */

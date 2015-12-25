@@ -1,4 +1,4 @@
-package model;
+package model.enums;
 
 /**
  * Created by Nikolai on 25.12.2015.

@@ -1,7 +1,9 @@
-package model;
+package model.enums;
 
 /**
- * Created by Nikolai on 22.12.2015.
+ * EOrigin contains all types of manufacturer countries
+ * @author Sultan Mykola on 25.12.2015
+ * @version X001
  */
 public enum EOrigin {
     RUSSIA("Russia"),
@@ -13,6 +15,10 @@ public enum EOrigin {
 
     String originName;
 
+    /**
+     * constructor
+     * @param modelName
+     */
     EOrigin(String modelName) {
         this.originName = modelName;
     }

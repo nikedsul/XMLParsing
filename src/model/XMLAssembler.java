@@ -1,5 +1,6 @@
 package model;
 
+import model.enums.EFieldName;
 import org.w3c.dom.Attr;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
@@ -15,7 +16,9 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
 /**
- * Created by Nikolai on 22.12.2015.
+ * Class XMLAssembler creates xml-file from given parameters
+ * @author Sultan Mykola on 25.12.2015
+ * @version X001
  */
 public class XMLAssembler {
     private final static String XML = "Guns.xml";
@@ -24,6 +27,12 @@ public class XMLAssembler {
         assembleXML(getDocument(guns));
     }
 
+    /**
+     * Method getDocument
+     * @param guns string array with gun characteristics
+     * @return xml-document
+     * @throws ParserConfigurationException
+     */
     private Document getDocument(String[]... guns) throws ParserConfigurationException {
 
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -85,6 +94,10 @@ public class XMLAssembler {
         return document;
     }
 
+    /**
+     * Method assembleXML makes xml-file from xml-document
+     * @param document is an xml-document
+     */
     private void assembleXML(Document document) {
         TransformerFactory transformerFactory = TransformerFactory.newInstance();
 

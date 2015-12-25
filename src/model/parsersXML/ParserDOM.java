@@ -2,6 +2,10 @@ package model.parsersXML;
 
 import controller.XMLAgainstXSD;
 import model.*;
+import model.enums.EFieldName;
+import model.enums.EMaterial;
+import model.enums.EModel;
+import model.enums.EOrigin;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
@@ -11,7 +15,6 @@ import javax.xml.parsers.DocumentBuilder;
 import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.IOException;
-import java.util.*;
 
 /**
  * Created by Nikolai on 22.12.2015.

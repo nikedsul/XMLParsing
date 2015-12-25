@@ -1,7 +1,9 @@
-package model;
+package model.enums;
 
 /**
- * Created by Nikolai on 22.12.2015.
+ * EModel contains names of all gun models
+ * @author Sultan Mykola on 25.12.2015
+ * @version X001
  */
 public enum EModel {
     PISTOL("pistol"),
@@ -11,10 +13,17 @@ public enum EModel {
 
     String modelName;
 
+    /**
+     * constructor
+     * @param modelName
+     */
     EModel(String modelName) {
         this.modelName = modelName;
     }
 
+    /**
+     * @return value of enum-type
+     */
     public String getName() {
         return this.modelName;
     }

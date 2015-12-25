@@ -33,7 +33,7 @@
       </xs:element>
       <xs:element type="performanceCharacteristicsType" name="performanceCharacteristics"/>
     </xs:sequence>
-    <xs:attribute type="xs:string" name="ID" use="optional"/>
+    <xs:attribute type="xs:string" name="ID" use="required"/>
   </xs:complexType>
   <xs:complexType name="fireRangeType">
     <xs:simpleContent>

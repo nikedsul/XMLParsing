@@ -2,6 +2,10 @@ package model.parsersXML;
 
 import controller.XMLAgainstXSD;
 import model.*;
+import model.enums.EFieldName;
+import model.enums.EMaterial;
+import model.enums.EModel;
+import model.enums.EOrigin;
 
 import java.io.FileNotFoundException;
 import java.io.FileReader;

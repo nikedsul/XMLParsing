@@ -1,6 +1,6 @@
 package model.parsersXML;
 
-import model.EFieldName;
+import model.enums.EFieldName;
 import model.Gun;
 
 import java.util.ArrayList;
@@ -9,15 +9,29 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Created by Nikolai on 24.12.2015.
+ * Class ParsersUniting is a parent of different xml-parsers.
+ * @author Sultan Mykola on 25.12.2015
+ * @version X001
  */
 abstract class ParsersUniting implements IParsersUniting {
+
+    /** List guns contains all objects of the Gun-class */
     List<Gun> guns = new ArrayList<Gun>();
 
+    /**
+     *
+     * @return list of Gun objects
+     */
+    @Override
     public List<Gun> getGuns() {
         return guns;
     }
 
+    /**
+     * Method sortByField sorts object list by chosen field
+     * @param fieldName desired field to be parameter for sorting
+     */
+    @Override
     public void sortByField(final EFieldName fieldName) {
         Collections.sort(guns, new Comparator<Gun>() {
             @Override
