@@ -1,5 +1,6 @@
 package model.parsersXML;
 
+import model.EFieldName;
 import model.Gun;
 
 import java.util.ArrayList;
@@ -17,29 +18,29 @@ abstract class ParsersUniting implements IParsersUniting {
         return guns;
     }
 
-    public void sortByField(final String fieldName) {
+    public void sortByField(final EFieldName fieldName) {
         Collections.sort(guns, new Comparator<Gun>() {
             @Override
             public int compare(Gun o1, Gun o2) {
-                if (fieldName.equals("Model")) {
+                if (fieldName.getName().equals(EFieldName.MODEL.getName())) {
                     return o1.getModel().getName().compareTo(o2.getModel().getName());
-                } else if (fieldName.equals("Manufacturer country")) {
+                } else if (fieldName.getName().equals(EFieldName.ORIGIN.getName())) {
                     return o1.getOrigin().getName().compareTo(o2.getOrigin().getName());
-                } else if (fieldName.equals("Material")) {
+                } else if (fieldName.getName().equals(EFieldName.MATERIAL.getName())) {
                     return o1.getMaterial().getName().compareTo(o2.getMaterial().getName());
-                } else if (fieldName.equals("TwoHand")) {
+                } else if (fieldName.getName().equals(EFieldName.TWO_HAND.getName())) {
                     return String.valueOf(o1.isTwoHand()).compareTo
                             (String.valueOf(o2.isTwoHand()));
-                } else if (fieldName.equals("Fire range")) {
+                } else if (fieldName.getName().equals(EFieldName.FIRE_RANGE.getName())) {
                     return String.valueOf(o1.getPerformanceChars().getFireRange()).compareTo
                             (String.valueOf(o2.getPerformanceChars().getFireRange()));
-                } else if (fieldName.equals("Accuracy range")) {
+                } else if (fieldName.getName().equals(EFieldName.ACCURACY_RANGE.getName())) {
                     return String.valueOf(o1.getPerformanceChars().getAccuracyRange()).compareTo
                             (String.valueOf(o2.getPerformanceChars().getAccuracyRange()));
-                } else if (fieldName.equals("Magazine charger")) {
+                } else if (fieldName.getName().equals(EFieldName.MAGAZINE.getName())) {
                     return String.valueOf(o1.getPerformanceChars().isMagazineCharger()).compareTo
                             (String.valueOf(o2.getPerformanceChars().isMagazineCharger()));
-                } else if (fieldName.equals("Optical sight")) {
+                } else if (fieldName.getName().equals(EFieldName.OPTICAL.getName())) {
                     return String.valueOf(o1.getPerformanceChars().isOpticalSight()).compareTo
                             (String.valueOf(o2.getPerformanceChars().isOpticalSight()));
                 } else return 0;

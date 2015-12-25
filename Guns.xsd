@@ -27,14 +27,27 @@
       <xs:element name="twoHand">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="false"/>
-            <xs:enumeration value="true"/>
+            <xs:pattern value="(true|false)" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element type="performanceCharacteristicsType" name="performanceCharacteristics"/>
     </xs:sequence>
-    <xs:attribute type="xs:string" name="id" use="optional"/>
+    <xs:attribute type="xs:string" name="ID" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="fireRangeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="measure" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+  <xs:complexType name="accuracyRangeType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="measure" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
   </xs:complexType>
   <xs:complexType name="gunsType">
     <xs:sequence>
@@ -43,37 +56,19 @@
   </xs:complexType>
   <xs:complexType name="performanceCharacteristicsType">
     <xs:sequence>
-      <xs:element name="fireRange">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="500"/>
-            <xs:enumeration value="800"/>
-            <xs:enumeration value="1000"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
-      <xs:element name="accuracyRange">
-        <xs:simpleType>
-          <xs:restriction base="xs:string">
-            <xs:enumeration value="100"/>
-            <xs:enumeration value="500"/>
-            <xs:enumeration value="300"/>
-          </xs:restriction>
-        </xs:simpleType>
-      </xs:element>
+      <xs:element type="fireRangeType" name="fireRange"/>
+      <xs:element type="accuracyRangeType" name="accuracyRange"/>
       <xs:element name="magazineCharger">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="false"/>
-            <xs:enumeration value="true"/>
+            <xs:pattern value="(true|false)" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>
       <xs:element name="opticalSight">
         <xs:simpleType>
           <xs:restriction base="xs:string">
-            <xs:enumeration value="false"/>
-            <xs:enumeration value="true"/>
+            <xs:pattern value="(true|false)" />
           </xs:restriction>
         </xs:simpleType>
       </xs:element>

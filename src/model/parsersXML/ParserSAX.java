@@ -40,7 +40,7 @@ public class ParserSAX extends ParsersUniting {
         public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
             element = qName;
             if (element.equals("gun")){
-                gunID = attributes.getValue("id");
+                gunID = attributes.getValue(EFieldName.ID.getName());
             }
         }
 
@@ -70,31 +70,22 @@ public class ParserSAX extends ParsersUniting {
         public void characters(char[] ch, int start, int length) throws SAXException {
             String value = new String(ch, start, length);
 
-            switch (getElement()) {
-                case "model" :
-                    model = value;
-                    break;
-                case "origin" :
-                    origin = value;
-                    break;
-                case "material" :
-                    material = value;
-                    break;
-                case "twoHand" :
-                    twoHand = value;
-                    break;
-                case "fireRange" :
-                    fireRange = value;
-                    break;
-                case "accuracyRange" :
-                    accuracyRange = value;
-                    break;
-                case "magazineCharger" :
-                    magazineCharger = value;
-                    break;
-                case "opticalSight" :
-                    opticalSight = value;
-                    break;
+            if (getElement().equals(EFieldName.MODEL.getName())) {
+                model = value;
+            } else if (getElement().equals(EFieldName.ORIGIN.getName())) {
+                origin = value;
+            } else if (getElement().equals(EFieldName.MATERIAL.getName())) {
+                material = value;
+            } else if (getElement().equals(EFieldName.TWO_HAND.getName())) {
+                twoHand = value;
+            } else if (getElement().equals(EFieldName.FIRE_RANGE.getName())) {
+                fireRange = value;
+            } else if (getElement().equals(EFieldName.ACCURACY_RANGE.getName())) {
+                accuracyRange = value;
+            } else if (getElement().equals(EFieldName.MAGAZINE.getName())) {
+                magazineCharger = value;
+            } else if (getElement().equals(EFieldName.OPTICAL.getName())) {
+                opticalSight = value;
             }
         }
 

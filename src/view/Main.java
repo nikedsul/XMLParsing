@@ -1,6 +1,7 @@
 package view;
 
 import jdk.internal.util.xml.XMLStreamException;
+import model.EFieldName;
 import model.parsersXML.IParsersUniting;
 import model.parsersXML.ParserDOM;
 import model.Gun;
@@ -20,9 +21,19 @@ public class Main {
         client.createXML();
         IParsersUniting domParser = new ParserDOM("Guns.xml");
         IParsersUniting saxParser = new ParserSAX("Guns.xml");
-        IParsersUniting parser = new ParserStAX("Guns.xml");
-        domParser.sortByField("Manufacturer country");
+        IParsersUniting staxParser = new ParserStAX("Guns.xml");
+        domParser.sortByField(EFieldName.ACCURACY_RANGE);
+        saxParser.sortByField(EFieldName.FIRE_RANGE);
+        staxParser.sortByField(EFieldName.MODEL);
         for (Gun gun : domParser.getGuns()) {
+            System.out.println(gun.toString());
+        }
+        System.out.println("==============================");
+        for (Gun gun : saxParser.getGuns()) {
+            System.out.println(gun.toString());
+        }
+        System.out.println("==============================");
+        for (Gun gun : staxParser.getGuns()) {
             System.out.println(gun.toString());
         }
     }

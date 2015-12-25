@@ -61,21 +61,21 @@ public class ParserStAX extends ParsersUniting {
                         if (qName.equalsIgnoreCase("gun")) {
                             Iterator<Attribute> attributes = startElement.getAttributes();
                             gunID = attributes.next().getValue();
-                        } else if (qName.equalsIgnoreCase("model")) {
+                        } else if (qName.equals(EFieldName.MODEL.getName())) {
                             bModel = true;
-                        } else if (qName.equalsIgnoreCase("origin")) {
+                        } else if (qName.equals(EFieldName.ORIGIN.getName())) {
                             bOrigin = true;
-                        } else if (qName.equalsIgnoreCase("material")) {
+                        } else if (qName.equals(EFieldName.MATERIAL.getName())) {
                             bMaterial = true;
-                        } else if (qName.equalsIgnoreCase("twoHand")) {
+                        } else if (qName.equals(EFieldName.TWO_HAND.getName())) {
                             bTwoHand = true;
-                        } else if (qName.equalsIgnoreCase("fireRange")) {
+                        } else if (qName.equals(EFieldName.FIRE_RANGE.getName())) {
                             bFireRange = true;
-                        } else if (qName.equalsIgnoreCase("accuracyRange")) {
+                        } else if (qName.equals(EFieldName.ACCURACY_RANGE.getName())) {
                             bAccuracyRange = true;
-                        } else if (qName.equalsIgnoreCase("magazineCharger")) {
+                        } else if (qName.equals(EFieldName.MAGAZINE.getName())) {
                             bMagazineCharger = true;
-                        } else if (qName.equalsIgnoreCase("opticalSight")) {
+                        } else if (qName.equals(EFieldName.OPTICAL.getName())) {
                             bOpticalSight = true;
                         }
                         break;

@@ -40,16 +40,16 @@ public class ParserDOM extends ParsersUniting {
 
             guns.add(
                 new Gun(
-                        Integer.valueOf(elementGun.getAttribute("id")),
-                        EModel.valueOf(elementGun.getElementsByTagName("model").item(0).getTextContent()),
-                        EOrigin.valueOf(elementGun.getElementsByTagName("origin").item(0).getTextContent()),
-                        EMaterial.valueOf(elementGun.getElementsByTagName("material").item(0).getTextContent()),
-                        (elementGun.getElementsByTagName("twoHand").item(0).getTextContent().equals("true")),
+                        Integer.valueOf(elementGun.getAttribute(EFieldName.ID.getName())),
+                        EModel.valueOf(elementGun.getElementsByTagName(EFieldName.MODEL.getName()).item(0).getTextContent()),
+                        EOrigin.valueOf(elementGun.getElementsByTagName(EFieldName.ORIGIN.getName()).item(0).getTextContent()),
+                        EMaterial.valueOf(elementGun.getElementsByTagName(EFieldName.MATERIAL.getName()).item(0).getTextContent()),
+                        (elementGun.getElementsByTagName(EFieldName.TWO_HAND.getName()).item(0).getTextContent().equals("true")),
                         new PerformanceChars(
-                                Integer.valueOf(elementChar.getElementsByTagName("fireRange").item(0).getTextContent()),
-                                Integer.valueOf(elementChar.getElementsByTagName("accuracyRange").item(0).getTextContent()),
-                                (elementChar.getElementsByTagName("magazineCharger").item(0).getTextContent().equals("true")),
-                                (elementChar.getElementsByTagName("opticalSight").item(0).getTextContent().equals("true"))
+                                Integer.valueOf(elementChar.getElementsByTagName(EFieldName.FIRE_RANGE.getName()).item(0).getTextContent()),
+                                Integer.valueOf(elementChar.getElementsByTagName(EFieldName.ACCURACY_RANGE.getName()).item(0).getTextContent()),
+                                (elementChar.getElementsByTagName(EFieldName.MAGAZINE.getName()).item(0).getTextContent().equals("true")),
+                                (elementChar.getElementsByTagName(EFieldName.OPTICAL.getName()).item(0).getTextContent().equals("true"))
                         )
                 )
             );

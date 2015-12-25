@@ -1,5 +1,6 @@
 package model.parsersXML;
 
+import model.EFieldName;
 import model.Gun;
 
 import java.util.List;
@@ -9,5 +10,5 @@ import java.util.List;
  */
 public interface IParsersUniting {
     List<Gun> getGuns();
-    void sortByField(final String fieldName);
+    void sortByField(final EFieldName fieldName);
 }
