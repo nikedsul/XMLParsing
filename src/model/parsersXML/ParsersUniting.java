@@ -10,7 +10,7 @@ import java.util.List;
 /**
  * Created by Nikolai on 24.12.2015.
  */
-abstract class ParsersUniting {
+abstract class ParsersUniting implements IParsersUniting {
     List<Gun> guns = new ArrayList<Gun>();
 
     public List<Gun> getGuns() {
